@@ -43,7 +43,7 @@ class Poubelle_intelligenteTest {
 
     @Test
     void attribuer_points() {
-        poubelle_intelligente.Attribuer_points(sac_poubelle);
+        poubelle_intelligente.Attribuer_points(sac_poubelle,consommateur);
         System.out.println(sac_poubelle.toString());
         //System.out.println(poubelle_intelligente.Attribuer_points(sac_poubelle));
 
@@ -59,6 +59,12 @@ class Poubelle_intelligenteTest {
 
     @Test
     void attribuer_penalite() {
+        System.out.println(poubelle_intelligente.Attribuer_penalite(sac_poubelle2,consommateur));
+        System.out.println(sac_poubelle2.toString());
+        //System.out.println(poubelle_intelligente.Attribuer_points(sac_poubelle));
+        Assertions.assertTrue(!(poubelle_intelligente.Verifier_dechets(sac_poubelle2)));
+        float val = -928f;
+        Assertions.assertEquals(consommateur.GetPoints(),val);
     }
 
     @Test

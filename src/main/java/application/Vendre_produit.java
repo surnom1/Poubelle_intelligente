@@ -44,7 +44,9 @@ public class Vendre_produit {
     public boolean Acceptation_paiement() {
         float debit_consommateur = Prix*Bon_de_reduction;
         if (consommateur.GetPoints() - debit_consommateur>0) {
-            consommateur = new Consommateur(consommateur.getCode_acces(), consommateur.getAdresse(), consommateur.GetPoints() - debit_consommateur, consommateur.getNom_utilisateur());
+            float temp=consommateur.GetPoints() - debit_consommateur;
+            consommateur.setPoints(temp);
+            //consommateur = new Consommateur(consommateur.getCode_acces(), consommateur.getAdresse(), consommateur.GetPoints() - debit_consommateur, consommateur.getNom_utilisateur());
             return true;
         }
         return false;

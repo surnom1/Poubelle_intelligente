@@ -16,6 +16,13 @@ public class Consommateur {
     private List<Centre_de_tri> centres_de_tri = new ArrayList<>();
     private List<Vendre_produit> Ventes = new ArrayList<>();
 
+    public float getPoints() {
+        return Points;
+    }
+
+    public void setPoints(float points) {
+        Points = points;
+    }
 
     public void add_ventes(Vendre_produit vente){
         Ventes.add(vente);

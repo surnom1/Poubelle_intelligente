@@ -59,12 +59,12 @@ public class Poubelle_intelligente {
      * @param Consommateur
      * @return
      */
-    public float Attribuer_points(Sac_poubelle Sac_poubelle) {
-        Consommateur consommateur = Sac_poubelle.getConsommateur();
+    public float Attribuer_points(Sac_poubelle Sac_poubelle,Consommateur consommateur) {
 
         if (Verifier_dechets(Sac_poubelle)){
             float temp = consommateur.GetPoints()+Sac_poubelle.getType_de_dechet().getNb_points_attribues()*Sac_poubelle.getNombre_de_dechets();
-            Sac_poubelle.setConsommateur(new Consommateur(consommateur.getCode_acces(),consommateur.getAdresse(),temp,consommateur.getNom_utilisateur()));
+            consommateur.setPoints(temp);
+            //Sac_poubelle.setConsommateur(new Consommateur(consommateur.getCode_acces(),consommateur.getAdresse(),temp,consommateur.getNom_utilisateur()));
             System.out.println(temp);
             return temp;
         }
@@ -84,13 +84,14 @@ public class Poubelle_intelligente {
 
     /**
      * @param Sac_poubelle 
-     * @param Consommateur 
+     * @param Consommateur
      * @return
      */
-    public float Attribuer_penalite(Sac_poubelle Sac_poubelle, Consommateur Consommateur) {
+    public float Attribuer_penalite(Sac_poubelle Sac_poubelle, Consommateur consommateur) {
         if (!(Verifier_dechets(Sac_poubelle))){
-            float temp = Consommateur.GetPoints()-Sac_poubelle.getType_de_dechet().getNb_points_attribues()*Sac_poubelle.getNombre_de_dechets();
-            Consommateur = new Consommateur(Consommateur.getCode_acces(),Consommateur.getAdresse(),temp,Consommateur.getNom_utilisateur());
+            float temp = consommateur.GetPoints()-Sac_poubelle.getType_de_dechet().getNb_points_attribues()*Sac_poubelle.getNombre_de_dechets();
+            consommateur.setPoints(temp);
+            //Consommateur = new Consommateur(Consommateur.getCode_acces(),Consommateur.getAdresse(),temp,Consommateur.getNom_utilisateur());
             return temp;
         }
         return 0;

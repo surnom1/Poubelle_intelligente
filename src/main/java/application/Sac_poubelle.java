@@ -72,6 +72,7 @@ public class Sac_poubelle {
         allInstances.add(this);
         this.consommateur=consommateur;
         this.bac=bac;
+        this.poubelle_intelligente=bac.getPoubelle_intelligente();
         bac.getPoubelle_intelligente().add_sac_poubelle(this);
         consommateur.add_sac_poubelle(this);
 

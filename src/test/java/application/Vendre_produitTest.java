@@ -16,5 +16,6 @@ class Vendre_produitTest {
     void acceptation_paiement() {
         Assertions.assertTrue(vente.Acceptation_paiement());
         System.out.println(consommateur.GetPoints());
+        Assertions.assertEquals(52,consommateur.GetPoints());
     }
 }

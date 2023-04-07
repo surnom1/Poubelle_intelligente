@@ -34,6 +34,8 @@ class Sac_poubelleTest {
 
     @Test
     void getPoubelle_intelligente() {
+        System.out.println(sac_poubelle.getBac());
+        System.out.println(sac_poubelle.getBac().getPoubelle_intelligente());
         Assertions.assertEquals(poubelle_intelligente,sac_poubelle.getPoubelle_intelligente());
     }
 
