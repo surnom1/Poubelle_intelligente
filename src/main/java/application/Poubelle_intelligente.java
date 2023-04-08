@@ -66,6 +66,9 @@ public class Poubelle_intelligente {
             consommateur.setPoints(temp);
             //Sac_poubelle.setConsommateur(new Consommateur(consommateur.getCode_acces(),consommateur.getAdresse(),temp,consommateur.getNom_utilisateur()));
             System.out.println(temp);
+            Date d = new Date();
+            consommateur.add_to_historique("attribution de points"+d.toString(), (int) temp);
+            System.out.println(consommateur.map);
             return temp;
         }
         return 0;
@@ -92,6 +95,8 @@ public class Poubelle_intelligente {
             float temp = consommateur.GetPoints()-Sac_poubelle.getType_de_dechet().getNb_points_attribues()*Sac_poubelle.getNombre_de_dechets();
             consommateur.setPoints(temp);
             //Consommateur = new Consommateur(Consommateur.getCode_acces(),Consommateur.getAdresse(),temp,Consommateur.getNom_utilisateur());
+            Date d = new Date();
+            consommateur.add_to_historique("attribution de point de penalite"+d.toString(), (int) temp);
             return temp;
         }
         return 0;

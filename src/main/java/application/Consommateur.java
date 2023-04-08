@@ -57,7 +57,7 @@ public class Consommateur {
     }
 
     public Map<String, Integer> getMap() {
-        return map;
+        return this.map;
     }
 
     public List<application.Sac_poubelle> getSac_poubelle() {
@@ -72,8 +72,12 @@ public class Consommateur {
         return Ventes;
     }
 
+    public void add_to_historique(String s, Integer i){
+        this.map.put(s,i);
+    }
     public Map<String, Integer> Historique() {
-        return map;
+
+        return this.map;
 
     }
     public float GetPoints() {

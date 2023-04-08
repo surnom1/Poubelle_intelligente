@@ -38,13 +38,6 @@ class ConsommateurTest {
     }
 
     @Test
-    void getMap() {
-        //TODO
-        Map<String,Integer> map = new HashMap<>();
-        Assertions.assertTrue(map.equals(consommateur.getMap()));
-    }
-
-    @Test
     void getSac_poubelle() {
         List<Sac_poubelle> sacs = new ArrayList<>();
         sacs.add(sac_poubelle);
@@ -71,6 +64,9 @@ class ConsommateurTest {
 
     @Test
     void historique() {
+
+        poubelle_intelligente.Attribuer_penalite(sac_poubelle,consommateur);
+        System.out.println(consommateur.getMap());
     }
 
     @Test

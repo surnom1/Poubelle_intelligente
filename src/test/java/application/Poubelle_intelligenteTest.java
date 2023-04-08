@@ -38,7 +38,7 @@ class Poubelle_intelligenteTest {
     void verifier_dechets() {
         Assertions.assertTrue(poubelle_intelligente.Verifier_dechets(sac_poubelle));
         Assertions.assertFalse(poubelle_intelligente.Verifier_dechets(sac_poubelle2));
-        Assertions.assertFalse(poubelle_intelligente.Verifier_dechets(sac_poubelle2));
+        Assertions.assertFalse(poubelle_intelligente.Verifier_dechets(sac_poubelle3));
     }
 
     @Test
@@ -53,7 +53,7 @@ class Poubelle_intelligenteTest {
 
     @Test
     void notif_centre_de_tri() {
-        poubelle_intelligente.Notif_centre_de_tri(centre_de_tri);
+        System.out.println(poubelle_intelligente.Notif_centre_de_tri(centre_de_tri));
         //Assertions.assertTrue();
     }
 
